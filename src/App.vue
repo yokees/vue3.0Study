@@ -2,6 +2,7 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">主页</router-link>
+      <router-link to="/form">表单</router-link>
       <router-link to="/about">VUE</router-link>
       <span>
         <a href="https://www.cnblogs.com/ndos/" target="_blank">cnblogs</a>
