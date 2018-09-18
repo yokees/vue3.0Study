@@ -1,6 +1,6 @@
 <template><div class="about">
   <top-nav :title="title1" @click-event="click"/>
-  <top-nav title="军事"/>
+  <top-nav title="军事" :class="{active:isActive}"/>
   <top-nav title="社会"/>
   <top-nav title="科技"/>
   <HelloWorld msg="vue 官方相关资料的链接"/>
@@ -18,7 +18,10 @@ export default {
   },
   data: function () {
     return {
-      title1: '推荐'
+      title1: '推荐',
+      isActive: function () {
+        return this.$route.params.id === '666'
+      }
     }
   },
   methods: {
@@ -29,3 +32,7 @@ export default {
   }
 }
 </script>
+
+<style lang="less">
+.active { background: red; }
+</style>
