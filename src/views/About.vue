@@ -3,7 +3,7 @@
   <top-nav title="军事" :class="{active:isActive}"/>
   <top-nav title="社会"/>
   <top-nav title="科技"/>
-  <HelloWorld msg="vue 官方相关资料的链接"/>
+  <router-view/>
 </div></template>
 
 <script>
@@ -29,6 +29,18 @@ export default {
       console.log(e)
       this.title1 = e
     }
+  },
+  beforeRouteEnter (to, from, next) {
+    console.log('组件-前置-钩子')
+    next()
+  },
+  beforeRouteUpdate (to, from, next) {
+    console.log('组件-复用-钩子')
+    next()
+  },
+  beforeRouteLeave (to, from, next) {
+    console.log('组件-离开-钩子')
+    next()
   }
 }
 </script>
